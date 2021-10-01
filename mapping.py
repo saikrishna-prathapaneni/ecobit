@@ -14,12 +14,7 @@ y_rob_limit = []
 
 
 #scaling and shifting constants of the system
-shift_x = 0      
-shift_y = 0
-shift_z = 0
-scale_x = 0
-scale_y = 0
-scale_z = 0
+
 
 
 img_coord=[]
@@ -43,22 +38,30 @@ def img_map(img_coord,scale_x=0.23100748849625882,scale_y=0.240651547402833,
     '''
     obj_data = img_coord
     for ob in obj_data:
-
+        ob=list(ob)
         xi=ob[1][0]
         yi=ob[1][1]
         #zi=img_coord[2]
 
         ob[1][0] = xi*scale_x + shift_x
         ob[1][1] = yi*scale_y + shift_y
-    
+        ob=tuple(ob)
     return obj_data
 
-def robot_map(img_coord):
+def robot_map(img_coord,scale_rx=0.9357304245772375,shift_rx=-1.0939181603679728,
+                          scale_ry=0.9791994517502605,shift_ry=-248.14358157462294):
     
     robot_coordinates = img_map(img_coord)
+    for ob in robot_coordinates:
+        ob=list(ob)
+        xi=ob[1][0]
+        yi=ob[1][1]
+        #zi=img_coord[2]
 
-
-
+        ob[1][0] = xi*scale_rx + shift_rx
+        ob[1][1] = yi*scale_ry + shift_ry
+    
+        ob=tuple(ob)
     #### robot mapping shall go here  ####
 
 
