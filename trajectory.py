@@ -3,11 +3,10 @@ from math import sqrt
 from pydobot import Dobot
 
 
-                    
-                    # z locations of the object
-z= {    }
+ # z locations of the object
+z= {0:'',1:'',2:'',3:'',4:''}
 
-bin_location = ( )     # location of bins
+bin_location = ( (0,0),(0,0))     # location of bins
 
 port = list_ports.comports()[0].device
 device = Dobot(port=port, verbose=True)     #Establish Connection with the bot
