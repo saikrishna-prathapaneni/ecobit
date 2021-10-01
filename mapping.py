@@ -35,9 +35,9 @@ def img_map(img_coord,scale_x=0.23100748849625882,scale_y=0.240651547402833,
     
     '''
     img_coord is having format:
-    list of (classIds[j], (x + w/2, y + h/2), (w, h))
+    list of (classIds[j], x + w/2, y + h/2, w, h)
 
-    (classid,(center_coordinates),(width and height) )
+    (classid,center_coordinates,width and height )
     
     
     '''

@@ -8,6 +8,18 @@ import os
 import time
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 def capture_image():
    # changes needed to be added for nvidea cam
 
