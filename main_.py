@@ -9,9 +9,12 @@ import time
 
 
 def capture_image():
+   # changes needed to be added for nvidea cam
+
+
 
     cap = cv2.VideoCapture(0)            # video capture source camera (Here webcam of laptop) 
-    ret,frame = cap.read()               # return a single frame in variable `frame`
+    ret,frame = cap.read()              
     video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, 820)
     video_capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 660)
   

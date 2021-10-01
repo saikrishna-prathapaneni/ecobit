@@ -19,7 +19,7 @@ device._set_arm_orientation('L')     #L is left and R is right arm orientation
 device.speed(8000,5000)     #Set overall movement speed of the bot. Highest values for both 10000
 
 def trej(obj_coord):
-    obj_coord = obj_coord.sort(key=lambda x:x[1])
+    obj_coord = obj_coord.sort(key=lambda x:x[2])
     for obj in obj_coord:
         obj_class=obj[0]
         obj_x = obj[1]
