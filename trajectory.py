@@ -8,16 +8,21 @@ z= {0:120.76,1:107.56,2:81.5,3:91.47}
 
 bin_location = ( (-161.89,-284.48,234.75),(-161.89,284.48,234.75))     # location of bins
 
-port = list_ports.comports()[0].device
-device = Dobot(port=port, verbose=True)     #Establish Connection with the bot
 
-print(device._get_arm_orientation())   #AA AA:3:50:0:00:206 here 00 means Left and 01:205 means right
-device._set_arm_orientation('L')     #L is left and R is right arm orientation
-
-
-device.speed(8000,5000)     #Set overall movement speed of the bot. Highest values for both 10000
 
 def trej(obj_coord):
+    port = list_ports.comports()[0].device
+    device = Dobot(port=port, verbose=True)     #Establish Connection with the bot
+
+    print(device._get_arm_orientation())   #AA AA:3:50:0:00:206 here 00 means Left and 01:205 means right
+      
+
+
+    device.speed(8000,5000)     #Set overall movement speed of the bot. Highest values for both 10000
+
+
+
+
     obj_coord = obj_coord.sort(key=lambda x:x[2])
     for obj in obj_coord:
         obj_class=obj[0]
