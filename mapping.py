@@ -39,12 +39,12 @@ def img_map(img_coord,scale_x=0.23100748849625882,scale_y=0.240651547402833,
     obj_data = img_coord
     for ob in obj_data:
         ob=list(ob)
-        xi=ob[1][0]
-        yi=ob[1][1]
+        xi=ob[1]
+        yi=ob[2]
         #zi=img_coord[2]
 
-        ob[1][0] = xi*scale_x + shift_x
-        ob[1][1] = yi*scale_y + shift_y
+        ob[1] = xi*scale_x + shift_x
+        ob[2] = yi*scale_y + shift_y
         ob=tuple(ob)
     return obj_data
 
@@ -54,12 +54,12 @@ def robot_map(img_coord,scale_rx=0.9357304245772375,shift_rx=-1.0939181603679728
     robot_coordinates = img_map(img_coord)
     for ob in robot_coordinates:
         ob=list(ob)
-        xi=ob[1][0]
-        yi=ob[1][1]
+        xi=ob[1]
+        yi=ob[2]
         #zi=img_coord[2]
 
-        ob[1][0] = xi*scale_rx + shift_rx
-        ob[1][1] = yi*scale_ry + shift_ry
+        ob[1] = xi*scale_rx + shift_rx
+        ob[2] = yi*scale_ry + shift_ry
     
         ob=tuple(ob)
     #### robot mapping shall go here  ####
