@@ -120,7 +120,7 @@ def linear_solve(first_term,second_term,const,no_of_expresults):
     return [x_coeff/len(data_of_results),y_coeff/len(data_of_results)]
 
 
-def main():
+def main_solve():
     data_x=[]
     data_y=[]
     while(True):
